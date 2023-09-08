@@ -1,18 +1,18 @@
 <template>
   <v-app>
-
+    <Navbar></Navbar>
     <router-view></router-view>
 
   </v-app>
 </template>
 
 <script>
+import Navbar from './components/Navbar.vue'
 import { mapState } from 'vuex';
-import HomeView from './views/HomeView.vue'
 export default {
   name: 'Appp',
   components: {
-    HomeView
+    Navbar
   },
   //props: {msg: String},
   data() {

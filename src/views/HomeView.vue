@@ -1,20 +1,14 @@
 <template>
-  <div class="bbbbbb" style="display: flex; width: 100vw;">
-    <Navbar></Navbar>
+  <div class="" style="width: 100vw;">
   </div>
 </template>
 
 <script>
 import { mapState } from 'vuex';
-import About from '../components/About.vue'
-import Navbar from '../components/Navbar.vue'
-import { RouterLink } from 'vue-router';
 
 export default {
   name: 'Home',
   components: {
-    About, Navbar,
-    RouterLink
   },
   data() {
     return {

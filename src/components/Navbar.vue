@@ -42,7 +42,7 @@ Nav header end
           <nav class="navbar navbar-expand">
             <div class="collapse navbar-collapse justify-content-between">
               <div class="header-left">
-                <div class="dashboard_bar">Dashboard</div>
+                <div class="dashboard_bar"></div>
               </div>
 
               <ul class="navbar-nav header-right" style="padding: 0;">
@@ -151,7 +151,7 @@ Nav header end
                     </svg>
                     <span class="badge light text-white bg-secondary">2</span>
                   </a>
-                  <div class="dropdown-menu dropdown-menu-end" style="right: 0 !important">
+                  <div class="dropdown-menu dropdown-menu-end" style="left: 0 !important">
                     <div id="DZ_W_Gifts" class="widget-timeline dz-scroll p-3 style-1">
                       <ul class="timeline">
                         <li>
@@ -279,14 +279,16 @@ Sidebar start
                 <span class="nav-text">Dashboard</span>
               </a>
               <ul aria-expanded="false">
-                <li><a href="index.html">Dashboard</a></li>
                 <li>
-                  <RouterLink to="/OurProduct">OurProduct</RouterLink>
+                  <RouterLink to="/">Our Product</RouterLink>
                 </li>
-                <li><a href="review.html">Review</a></li>
-                <li><a href="order.html">Order</a></li>
-                <li><a href="order-list.html">Order List</a></li>
-                <li><a href="customer-list.html">Customer List</a></li>
+                <li>
+                  <RouterLink to="/OrderView">Orders Management</RouterLink>
+                </li>
+               <li>
+                <RouterLink to="/CategoryView">Category Management</RouterLink>
+                
+               </li>
               </ul>
             </li>
             <li>
@@ -476,6 +478,7 @@ Sidebar end
 import { mapState } from 'vuex';
 //import About from '../components/About.vue'
 //import Navbar from '../components/Navbar.vue'
+
 
 export default {
   name: 'Navbar',

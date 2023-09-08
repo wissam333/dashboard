@@ -8,7 +8,7 @@
     { "id": 6, "Aname": "برجر", "Ename": "Burger", "link": "burger" },
     { "id": 7, "Aname": "مشروبات", "Ename": "Drinks", "link": "drinks" },
     { "id": 8, "Aname": "اضافات", "Ename": "Addons", "link": "addons" },
-    { "id": 9, "Aname": "ملاجظات", "Ename": "Note", "link": "note" }
+    { "id": 9, "Aname": "ملاحظات", "Ename": "Note", "link": "note" }
   ],
   "items": [
     {
@@ -79,7 +79,9 @@
       "qty": 1,
       "price": 25,
       "click": 0,
-      "color": "#000"
+      "color": "#000",
+      "addons": [],
+      "options": []
     },
     {
       "id": 4,
@@ -91,7 +93,9 @@
       "qty": 1,
       "price": 25,
       "click": 0,
-      "color": "#000"
+      "color": "#000",
+      "addons": [],
+      "options": []
     },
     {
       "id": 5,
@@ -103,7 +107,9 @@
       "qty": 1,
       "click": 0,
       "price": 25,
-      "color": "#000"
+      "color": "#000",
+      "addons": [],
+      "options": []
     },
     {
       "id": 2,
@@ -115,7 +121,9 @@
       "qty": 1,
       "click": 0,
       "price": 25,
-      "color": "#cd0000"
+      "color": "#cd0000",
+      "addons": [],
+      "options": []
     },
     {
       "id": 6,
@@ -127,7 +135,9 @@
       "qty": 1,
       "click": 0,
       "price": 25,
-      "color": "#cd0000"
+      "color": "#cd0000",
+      "addons": [],
+      "options": []
     },
     {
       "id": 7,
@@ -139,7 +149,9 @@
       "qty": 1,
       "click": 0,
       "price": 25,
-      "color": "#cd0000"
+      "color": "#cd0000",
+      "addons": [],
+      "options": []
     },
     {
       "id": 8,
@@ -151,7 +163,9 @@
       "qty": 1,
       "click": 0,
       "price": 25,
-      "color": "#cd0000 "
+      "color": "#cd0000 ",
+      "addons": [],
+      "options": []
     },
     {
       "id": 9,
@@ -163,7 +177,9 @@
       "qty": 1,
       "click": 0,
       "price": 25,
-      "color": "#000"
+      "color": "#000",
+      "addons": [],
+      "options": []
     }
   ],
   "Order_List": [
@@ -1270,9 +1286,7 @@
           ]
         }
       ]
-    }
-  ],
-  "Order_List": [
+    },
     {
       "id": 1,
       "name": "بروستد عادي",

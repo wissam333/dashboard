@@ -8,19 +8,19 @@
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel"
                                 aria-labelledby="home-tab" tabindex="0">
-                                <img class="img-fluid rounded " src="../../public/images/card/1.png" alt="">
+                                <img class="img-fluid rounded w-100" src="../../public/images/card/1.png" alt="">
                             </div>
                             <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab"
                                 tabindex="0">
-                                <img class="img-fluid  rounded" src="../../public/images/card/1.png" alt="">
+                                <img class="img-fluid  rounded w-100" src="../../public/images/card/2.png" alt="">
                             </div>
                             <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab"
                                 tabindex="0">
-                                <img class="img-fluid rounded" src="../../public/images/card/1.png" alt="">
+                                <img class="img-fluid rounded w-100" src="../../public/images/card/3.png" alt="">
                             </div>
                             <div class="tab-pane fade" id="end-tab-pane" role="tabpanel" aria-labelledby="end-tab"
                                 tabindex="0">
-                                <img class="img-fluid rounded" src="../../public/images/card/1.png" alt="">
+                                <img class="img-fluid rounded w-100" src="../../public/images/card/1.png" alt="">
                             </div>
 
                         </div>
@@ -28,25 +28,25 @@
                             <li class="nav-item" role="presentation">
                                 <a href="#first" class="nav-link active" id="home-tab" data-bs-toggle="tab"
                                     data-bs-target="#home-tab-pane" role="tab" aria-controls="home-tab-pane"
-                                    aria-selected="true"><img class="img-fluid me-2 rounded"
+                                    aria-selected="true"><img class="img-fluid me-2 rounded w-100"
                                         src="../../public/images/card/1.png" alt="" width="80"></a>
                             </li>
                             <li class="nav-item" role="presentation">
                                 <a href="#second" class="nav-link" id="profile-tab" data-bs-toggle="tab"
                                     data-bs-target="#profile-tab-pane" role="tab" aria-controls="profile-tab-pane"
-                                    aria-selected="false"><img class="img-fluid me-2 rounded"
-                                        src="../../public/images/card/1.png" alt="" width="80"></a>
+                                    aria-selected="false"><img class="img-fluid me-2 rounded w-100"
+                                        src="../../public/images/card/2.png" alt="" width="80"></a>
                             </li>
                             <li class="nav-item" role="presentation">
                                 <a href="#third" class="nav-link" id="contact-tab" data-bs-toggle="tab"
                                     data-bs-target="#contact-tab-pane" role="tab" aria-controls="contact-tab-pane"
-                                    aria-selected="false"><img class="img-fluid me-2 rounded"
-                                        src="../../public/images/card/1.png" alt="" width="80"></a>
+                                    aria-selected="false"><img class="img-fluid me-2 rounded w-100"
+                                        src="../../public/images/card/3.png" alt="" width="80"></a>
                             </li>
                             <li class="nav-item" role="presentation">
                                 <a href="#for" class="nav-link" id="end-tab" data-bs-toggle="tab"
                                     data-bs-target="#end-tab-pane" role="tab" aria-controls="end-tab-pane"
-                                    aria-selected="false"><img class="img-fluid me-2 rounded"
+                                    aria-selected="false"><img class="img-fluid me-2 rounded w-100"
                                         src="../../public/images/card/1.png" alt="" width="80"></a>
                             </li>
 
@@ -59,16 +59,21 @@
                             <div class="new-arrival-content mt-md-0 mt-3 pr">
                                 <input type="text" style="font-size: 20px;margin-bottom: 16px;" v-model="item.name">
                                 <h6>السعر :</h6>
-                                <span class="price">$</span><input type="number" class="price" style="margin-bottom: 16px;"
-                                    v-model="item.price">
+                                <div style="width: 100%;height: 45px;">
+                                    <span class="price">$</span><input type="number" class="price"
+                                        style="margin-bottom: 16px;" v-model="item.price">
+                                </div>
                                 <h6>البطاقات :</h6>
                                 <input type="text" style="margin: 0px 0px 16px 0;" v-model="item.tags">
 
                                 <h6>الاضافات المتاحة: </h6>
                                 <div style="display: inline-block;" v-for="(addons, key) in item.addons">
-                                    <span class="badge badge-danger light me-1"> <span
-                                            @click="item.addons.splice(key, 1)">$%</span>{{ addons.Aname }} </span>
+                                    <span class="badge badge-danger light me-1"> <span @click="item.addons.splice(key, 1)">
+                                            <i class="bi bi-trash-fill"
+                                                style="padding: 5px;margin-left: 2px;"></i></span>{{
+                                                    addons.Aname }} </span>
                                 </div>
+                                <p v-if="item.addons.length == 0">لا يوجد اضافات</p>
                                 <!-- add addons -->
                                 <button v-if="!editAddons" class="btn btn-success" @click="editAddons = true"
                                     style="padding: 5px 16px;margin: 20px;">Add</button>
@@ -84,15 +89,16 @@
                                         placeholder="Type English Name">
                                     <input type="number" v-model="addonsPrice" id="Price" placeholder="Type Price">
                                 </div>
-                                <p v-if="!item.addons">لا يوجد اضافات</p>
+
                                 <br>
 
                                 <h6>الخيارات المتاحة :</h6>
                                 <div style="display: inline-block;" v-for="(option, key) in item.options">
-                                    <span class="badge badge-info light me-1"> <span
-                                            @click="item.options.splice(key, 1)">$%</span>
+                                    <span class="badge badge-info light me-1"> <span @click="item.options.splice(key, 1)"><i
+                                                class="bi bi-trash-fill" style="padding: 5px;margin-left: 2px;"></i></span>
                                         {{ option.Aname }} </span>
                                 </div>
+                                <p v-if="item.options.length == 0">لا يوجد اضافات</p>
                                 <!-- add options -->
                                 <button v-if="!editOptions" class="btn btn-success" @click="editOptions = true"
                                     style="padding: 5px 16px;margin: 20px;">Add</button>
@@ -109,7 +115,6 @@
                                         placeholder="Type English Name">
                                     <input type="number" v-model="optionsPrice" id="Price" placeholder="Type Price">
                                 </div>
-                                <p v-if="!item.options">لا يوجد اضافات</p>
                             </div>
                         </div>
                     </div>
@@ -178,9 +183,6 @@ export default {
                 this.addonsPrice = '';
             }
         },
-        deleteoption: function (option) {
-
-        }
 
     },
     watch:
