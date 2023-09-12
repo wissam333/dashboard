@@ -1,6 +1,6 @@
 
 <template>
-    <div class="bbbbbb" style=" width: 100vw;">
+    <div class="bbbbbb" style=" width: 100vw; background-color: #eee;">
         <!-- Slider main container -->
         <div ref="swiper" class="shuffle">
             <!-- Additional required wrapper -->
@@ -140,8 +140,8 @@ export default {
     flex-wrap: wrap;
     list-style: none;
     padding: 0;
-    margin-top: 50px;
-    margin-bottom: 50px !important;
+    margin-top: 40px;
+    margin-bottom: 40px !important;
 
     li {
         padding: 10px 20px;
@@ -149,7 +149,8 @@ export default {
         color: #231f1e;
         font-size: 14px;
         font-weight: 600;
-        border: 1px solid #c5c5c5;
+        background-color: #fff;
+        border: 1px solid #fff;
         border-radius: 30px;
         margin-right: 10px;
         margin-bottom: 10px;

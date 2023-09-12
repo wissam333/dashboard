@@ -17,7 +17,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr v-for="(cat, key) in cats">
+                                <tr v-for="(cat, key) in cats" class="rows">
                                     <td>{{ cat.id }}</td>
                                     <td><input type="text" v-model="cat.Aname"></td>
                                     <td><input type="text" v-model="cat.Ename"> </td>
@@ -101,5 +101,19 @@ td,
 th {
     padding: 8px 15px;
     white-space: nowrap;
+}
+
+.rows:nth-child(even) {
+    background-color: #dd2f6e;
+    td{
+        color: #fff;
+    }
+    input{
+        color: #fff;
+    }
+
+    i{
+        color: #fff;
+    }
 }
 </style>

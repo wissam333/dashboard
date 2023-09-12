@@ -1,6 +1,6 @@
 <template>
     <div class="container-fluid" style="width: 100vw;">
-        <h2 class="my-8">اخر الطلبات</h2>
+        <h2 class="my-8">الطلبات</h2>
         <!-- row -->
         <div class="container-fluid">
             <div class="form-head d-flex mt-4 mb-4 align-items-start">
@@ -25,11 +25,11 @@
                                 </clipPath>
                             </defs>
                         </svg>
-                        Today
+                        Filter
                     </div>
                     <div class="dropdown-menu dropdown-menu-left">
-                        <a class="dropdown-item" href="#">A To Z List</a>
-                        <a class="dropdown-item" href="#">Z To A List</a>
+                        <div class="dropdown-item" @click="gg">Sort By Date</div>
+                        <div class="dropdown-item">Z To A List</div>
                     </div>
                 </div>
 
@@ -52,13 +52,20 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr v-for="order in orders">
+                                <tr v-for="(order, key) in orders" class="rows">
                                     <td>{{ order.order_id }}</td>
-                                    <td class="wspace-no">26 March 2020<br> 12:42 AM</td>
+                                    <td class="wspace-no">{{ order.order_date }}</td>
                                     <td>James WItcwicky</td>
                                     <td>Corner Street 5th London</td>
-                                    <td>${{ order.order_total }}</td>
-                                    <td><a class="btn btn-warning light btn-sm">PENDING</a></td>
+                                    <td>${{ order.order_subtotal }}</td>
+                                    <td v-if="order.order_status_code == 'done'"><a class="btn btn-success light btn-sm">{{
+                                        order.order_status_code }}</a></td>
+                                    <td v-if="order.order_status_code == 'ready'"><a class="btn btn-info light btn-sm">{{
+                                        order.order_status_code }}</a></td>
+                                    <td v-if="order.order_status_code == 'cancelled'"><a
+                                            class="btn btn-danger light btn-sm">{{ order.order_status_code }}</a></td>
+                                    <td v-if="order.order_status_code == 'pending'"><a
+                                            class="btn btn-warning light btn-sm">{{ order.order_status_code }}</a></td>
                                     <td>
                                         <div class="dropdown ms-auto c-pointer">
                                             <div class="btn-link" data-bs-toggle="dropdown">
@@ -79,19 +86,8 @@
                                                 </svg>
                                             </div>
                                             <div class="dropdown-menu dropdown-menu-end">
-                                                <a class="dropdown-item text-info" href="#">
-                                                    <svg class="me-2" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg">
-                                                        <path
-                                                            d="M22 11.08V12C21.9988 14.1564 21.3005 16.2547 20.0093 17.9818C18.7182 19.709 16.9033 20.9725 14.8354 21.5839C12.7674 22.1953 10.5573 22.1219 8.53447 21.3746C6.51168 20.6273 4.78465 19.2461 3.61096 17.4371C2.43727 15.628 1.87979 13.4881 2.02168 11.3363C2.16356 9.18457 2.99721 7.13633 4.39828 5.49707C5.79935 3.85782 7.69279 2.71538 9.79619 2.24015C11.8996 1.76491 14.1003 1.98234 16.07 2.86"
-                                                            stroke="#2F4CDD" stroke-width="2" stroke-linecap="round"
-                                                            stroke-linejoin="round" />
-                                                        <path d="M22 4L12 14.01L9 11.01" stroke="#2F4CDD" stroke-width="2"
-                                                            stroke-linecap="round" stroke-linejoin="round" />
-                                                    </svg>
-                                                    Accept order
-                                                </a>
-                                                <a class="dropdown-item text-danger" href="#">
+                                                <a class="dropdown-item text-danger" href="#"
+                                                    @click="orders.splice(key, 1)">
                                                     <svg class="me-2" width="24" height="24" viewBox="0 0 24 24" fill="none"
                                                         xmlns="http://www.w3.org/2000/svg">
                                                         <path
@@ -109,7 +105,7 @@
                                                     path: '/OrderDetails',
                                                     name: 'OrderDetails',
                                                     component: OrderDetails,
-                                                    params: { id: order.id }
+                                                    params: { id: order.order_id }
                                                 }
                                                     " class="dropdown-item text-black" href="javascript:;">
                                                     <svg class="ms-2" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -152,8 +148,11 @@ export default {
     },
     methods:
     {
-
-
+        gg: function () {
+            this.orders.sort(function (a, b) {
+                return new Date(b.order_date) - new Date(a.order_date);
+            });
+        }
     },
     watch:
     {
@@ -162,8 +161,9 @@ export default {
     computed:
     {
         ...mapState({
-            orders: state => state.Order_List,
-        })
+            orders: state => state.Order_List
+        }),
+
     }
 }
 </script>
@@ -176,6 +176,18 @@ td,
 th {
     padding: 8px 15px;
     white-space: nowrap;
+    text-align: center;
+}
+
+.rows:nth-child(even) {
+    color: #fff;
+    background-color: #dd2f6e;
+
+    svg {
+        path {
+            stroke: #fff !important;
+        }
+    }
 }
 </style>
   
