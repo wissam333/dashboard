@@ -55,8 +55,8 @@
                                 <tr v-for="(order, key) in orders" class="rows">
                                     <td>{{ order.order_id }}</td>
                                     <td class="wspace-no">{{ order.order_date }}</td>
-                                    <td>James WItcwicky</td>
-                                    <td>Corner Street 5th London</td>
+                                    <td>{{ order.customer_name }}</td>
+                                    <td>{{ order.order_address }}</td>
                                     <td>${{ order.order_subtotal }}</td>
                                     <td v-if="order.order_status_code == 'done'"><a class="btn btn-success light btn-sm">{{
                                         order.order_status_code }}</a></td>

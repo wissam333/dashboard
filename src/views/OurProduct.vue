@@ -23,7 +23,7 @@
             </li>
         </ul> -->
 
-        <div class="products">
+        <div class="products container">
 
             <div class="item" v-show="item.tags.includes(activeCat)" v-for=" item  in  items ">
                 <RouterLink :to="{
