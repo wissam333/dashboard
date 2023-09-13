@@ -295,4 +295,4 @@ function r(e){var t=Number(e.version.split(".")[0]);if(t>=2)e.mixin({beforeCreat
   * (c) 2022 Evan You
   * @license MIT
   */function a(){var e=(0,r.FN)().proxy.$root;if(!e._$route){var t=(0,r.B)(!0).run((function(){return(0,r.Um)(Object.assign({},e.$router.currentRoute))}));e._$route=t,e.$router.afterEach((function(e){Object.assign(t,e)}))}return e._$route}}}]);
-//# sourceMappingURL=chunk-vendors.f8e08ed8.js.map
+//# sourceMappingURL=chunk-vendors.3ad1ef4e.js.map
