@@ -38,7 +38,7 @@
                             <div class="col-xxl-12" style="padding: 0;">
                                 <div class="new-arrival-product">
                                     <div class="new-arrivals-img-contnent">
-                                        <img class="img-fluid" src="../../public/images/card/1.png" alt="">
+                                        <img class="img-fluid" style="width: 100%;height: 130px;" :src="item.img" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -140,8 +140,8 @@ export default {
     flex-wrap: wrap;
     list-style: none;
     padding: 0;
-    margin-top: 40px;
-    margin-bottom: 40px !important;
+    margin-top: 30px;
+    margin-bottom: 20px !important;
 
     li {
         padding: 10px 20px;

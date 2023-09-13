@@ -290,6 +290,9 @@ Sidebar start
                 <div>
                   <RouterLink to="/CategoryView">Category Management</RouterLink>
                 </div>
+                <div>
+                  <RouterLink to="/NewProduct">Add New Product</RouterLink>
+                </div>
               </div>
             </div>
           </div>

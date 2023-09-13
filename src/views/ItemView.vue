@@ -12,19 +12,19 @@
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel"
                                 aria-labelledby="home-tab" tabindex="0">
-                                <img class="img-fluid rounded w-100" src="../../public/images/card/1.png" alt="">
+                                <img class="rounded w-100" height="200" :src="item.img" alt="">
                             </div>
                             <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab"
                                 tabindex="0">
-                                <img class="img-fluid  rounded w-100" src="../../public/images/card/2.png" alt="">
+                                <img class="rounded w-100" height="200" src="../../public/images/card/2.png" alt="">
                             </div>
                             <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab"
                                 tabindex="0">
-                                <img class="img-fluid rounded w-100" src="../../public/images/card/3.png" alt="">
+                                <img class="rounded w-100" height="200" src="../../public/images/card/3.png" alt="">
                             </div>
                             <div class="tab-pane fade" id="end-tab-pane" role="tabpanel" aria-labelledby="end-tab"
                                 tabindex="0">
-                                <img class="img-fluid rounded w-100" src="../../public/images/card/1.png" alt="">
+                                <img class="rounded w-100" height="200" src="../../public/images/card/1.png" alt="">
                             </div>
 
                         </div>
@@ -32,26 +32,26 @@
                             <li class="nav-item" role="presentation">
                                 <a href="#first" class="nav-link active" id="home-tab" data-bs-toggle="tab"
                                     data-bs-target="#home-tab-pane" role="tab" aria-controls="home-tab-pane"
-                                    aria-selected="true"><img class="img-fluid me-2 rounded w-100"
-                                        src="../../public/images/card/1.png" alt="" width="80"></a>
+                                    aria-selected="true"><img class="me-2 rounded w-100" :src="item.img" alt="" width="80"
+                                        height="60"></a>
                             </li>
                             <li class="nav-item" role="presentation">
                                 <a href="#second" class="nav-link" id="profile-tab" data-bs-toggle="tab"
                                     data-bs-target="#profile-tab-pane" role="tab" aria-controls="profile-tab-pane"
-                                    aria-selected="false"><img class="img-fluid me-2 rounded w-100"
-                                        src="../../public/images/card/2.png" alt="" width="80"></a>
+                                    aria-selected="false"><img class="me-2 rounded w-100"
+                                        src="../../public/images/card/1.png" alt="" width="80" height="60"></a>
                             </li>
                             <li class="nav-item" role="presentation">
                                 <a href="#third" class="nav-link" id="contact-tab" data-bs-toggle="tab"
                                     data-bs-target="#contact-tab-pane" role="tab" aria-controls="contact-tab-pane"
-                                    aria-selected="false"><img class="img-fluid me-2 rounded w-100"
-                                        src="../../public/images/card/3.png" alt="" width="80"></a>
+                                    aria-selected="false"><img class="me-2 rounded w-100"
+                                        src="../../public/images/card/2.png" alt="" width="80" height="60"></a>
                             </li>
                             <li class="nav-item" role="presentation">
                                 <a href="#for" class="nav-link" id="end-tab" data-bs-toggle="tab"
                                     data-bs-target="#end-tab-pane" role="tab" aria-controls="end-tab-pane"
-                                    aria-selected="false"><img class="img-fluid me-2 rounded w-100"
-                                        src="../../public/images/card/1.png" alt="" width="80"></a>
+                                    aria-selected="false"><img class="me-2 rounded w-100"
+                                        src="../../public/images/card/3.png" alt="" width="80" height="60"></a>
                             </li>
 
                         </ul>
@@ -72,7 +72,8 @@
 
                                 <h6>الاضافات المتاحة: </h6>
                                 <div style="display: inline-block;" v-for="(addons, key) in item.addons">
-                                    <span class="badge badge-danger light me-1" style="font-size: 12px;"> <span @click="item.addons.splice(key, 1)">
+                                    <span class="badge badge-danger light me-1" style="font-size: 12px;"> <span
+                                            @click="item.addons.splice(key, 1)">
                                             <i class="bi bi-trash-fill"
                                                 style="padding: 6.5px;margin-left: 10px;margin-right: -10px;background: #dd2f6e;font-size: 12px;border-radius: 50%;color: #fff;"></i></span>{{
                                                     addons.Aname }} </span>
@@ -98,8 +99,8 @@
 
                                 <h6>الخيارات المتاحة :</h6>
                                 <div style="display: inline-block;" v-for="(option, key) in item.options">
-                                    <span class="badge badge-info light me-1" style="font-size: 12px;"> <span @click="item.options.splice(key, 1)"><i
-                                                class="bi bi-trash-fill"
+                                    <span class="badge badge-info light me-1" style="font-size: 12px;"> <span
+                                            @click="item.options.splice(key, 1)"><i class="bi bi-trash-fill"
                                                 style="padding: 6.5px;margin-left: 10px;margin-right: -10px;font-size: 12px;background: rgb(47 76 221);border-radius: 50%;color: #fff;"></i></span>
                                         {{ option.Aname }} </span>
                                 </div>
@@ -164,7 +165,7 @@ export default {
                         Aname: this.optionsAname,
                         Ename: this.optionsEname,
                         price: this.optionsPrice,
-                        id: "5",
+                        id: this.singleItem[0].options[this.singleItem[0].options.length - 1].id + 1,
                         check: false
                     })
                 })
@@ -181,7 +182,7 @@ export default {
                         Aname: this.addonsAname,
                         Ename: this.addonsEname,
                         price: this.addonsPrice,
-                        id: "3",
+                        id: this.singleItem[0].addons[this.singleItem[0].addons.length - 1].id + 1,
                         check: false
                     })
                 })
@@ -231,6 +232,10 @@ img {
             color: #fff;
         }
     }
+}
+
+.active {
+    background: transparent !important;
 }
 </style>
   

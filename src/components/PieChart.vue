@@ -35,7 +35,6 @@ export default {
     },
     mounted() {
         this.renderChart(this.datacollection, this.options);
-        console.log(this.singleOrder[0].order_items_list[0])
     },
     computed: {
     }

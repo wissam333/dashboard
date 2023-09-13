@@ -52,15 +52,18 @@
                 </div>
             </div>
             <h2 class="my-8">معلومات الطلب</h2>
-            <div class="card p-3 d-f" style="flex-direction: row;align-items: center;justify-content: space-around;">
-                <div>
-                    <div>الملاحظات : {{ order.order_note }}</div>
-                    <div>كود الخصم : {{ order.order_discount_code }}</div>
-                    <div>الخصم : {{ order.order_discount }}$</div>
-                    <div>الضريبة : {{ order.order_vat }}$</div>
-                    <div>المجموع الاجمالي : {{ order.order_total }}$</div>
+            <div class="card p-3">
+                <div class="row" style="justify-content: center;">
+                    <div class="col-lg-6" style="color: #333;">
+                        <div>الملاحظات : {{ order.order_note }}</div>
+                        <div>كود الخصم : {{ order.order_discount_code }}</div>
+                        <div>الخصم : {{ order.order_discount }}$</div>
+                        <div>الضريبة : {{ order.order_vat }}$</div>
+                        <div>المجموع الاجمالي : {{ order.order_total }}$</div>
+                    </div>
+                    <chart class="col-lg-6" :singleOrder="singleOrder" style="height: 400px;width: 400px;cursor: pointer;">
+                    </chart>
                 </div>
-                <chart :singleOrder="singleOrder" style="height: 200px;width: 200px;cursor: pointer;"></chart>
             </div>
         </div>
     </div>

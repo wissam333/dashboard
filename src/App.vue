@@ -14,7 +14,7 @@ export default {
   components: {
     Navbar
   },
-  //props: {msg: String},
+
   data() {
     return {
 
@@ -34,7 +34,6 @@ export default {
     this.$vuetify.lang.current = 'ar';
   },
   watch: {
-    // whenever question changes, this function will run
 
   },
   computed: {

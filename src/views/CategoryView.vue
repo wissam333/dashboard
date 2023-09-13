@@ -70,7 +70,7 @@ export default {
                     Aname: this.Aname,
                     Ename: this.Ename,
                     link: this.link,
-                    id: "5",
+                    id: this.cats[this.cats.length - 1].id + 1,
                 })
                 this.Aname = '';
                 this.Ename = '';
@@ -114,6 +114,20 @@ th {
 
     i{
         color: #fff;
+    }
+}
+#AddOptions {
+    background: #dd2f6e;
+    border-radius: 12px;
+
+    input {
+        caret-color: #fff;
+        color: #fff;
+
+        &::placeholder {
+            opacity: 0.6;
+            color: #fff;
+        }
     }
 }
 </style>
