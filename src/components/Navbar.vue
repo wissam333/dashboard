@@ -297,13 +297,13 @@ Sidebar start
             </div>
           </div>
 
-          <div class="plus-box">
+          <div class="plus-box" style="display: block !important;">
             <p class="fs-13 font-w300 mb-4">
               Organize your menus through button bellow
             </p>
             <a class="btn bg-white text-black btn-rounded d-block" href="javascript:;">+Add Menus</a>
           </div>
-          <div class="copyright">
+          <div class="copyright" style="display: block !important;">
             <p class="fs-14 font-w200">
               <strong class="font-w400">Koki Restaurant Admin Dashboard</strong>
               © 2023 All Rights Reserved

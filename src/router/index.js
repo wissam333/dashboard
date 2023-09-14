@@ -1,6 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 
+import HomeView from "../views/HomeView.vue";
 import OurProduct from "../views/OurProduct.vue";
 import ItemView from "../views/ItemView.vue";
 import OrderView from "../views/OrderView.vue";
@@ -11,6 +12,7 @@ import NewProduct from "../views/NewProduct.vue";
 Vue.use(VueRouter);
 
 const routes = [
+  { path: "/HomeView", name: "HomeView", component: HomeView },
   { path: "/", name: "OurProduct", component: OurProduct },
   { path: "/ItemView/:id", name: "ItemView", component: ItemView },
   { path: "/OrderView", name: "OrderView", component: OrderView },

@@ -19,9 +19,9 @@
                             <tbody>
                                 <tr v-for="(cat, key) in cats" class="rows">
                                     <td>{{ cat.id }}</td>
-                                    <td><input type="text" v-model="cat.Aname"></td>
-                                    <td><input type="text" v-model="cat.Ename"> </td>
-                                    <td><input type="text" v-model="cat.link"></td>
+                                    <td><input autocomplete="off" type="text" v-model="cat.Aname"></td>
+                                    <td><input autocomplete="off" type="text" v-model="cat.Ename"> </td>
+                                    <td><input autocomplete="off" type="text" v-model="cat.link"></td>
                                     <td @click="cats.splice(key, 1)"
                                         style="text-align: center; font-size: 18px;color: #dd2f6e;"><i
                                             class="bi bi-x-square-fill"></i></td>
@@ -39,9 +39,9 @@
             style="padding: 5px 16px;margin: 20px;">Save</button>
 
         <div v-show="add" id="AddOptions" style="padding: 16px;display: flex;flex-direction: column;">
-            <input type="text" v-model="Aname" name="" id="Aname" placeholder="Type Arabic Name">
-            <input type="text" v-model="Ename" name="" id="Ename" placeholder="Type English Name">
-            <input type="text" v-model="link" id="link" placeholder="Type Link">
+            <input autocomplete="off" type="text" v-model="Aname" name="" id="Aname" placeholder="Type Arabic Name">
+            <input autocomplete="off" type="text" v-model="Ename" name="" id="Ename" placeholder="Type English Name">
+            <input autocomplete="off" type="text" v-model="link" id="link" placeholder="Type Link">
         </div>
     </div>
 </template>
@@ -105,17 +105,20 @@ th {
 
 .rows:nth-child(even) {
     background-color: #dd2f6e;
-    td{
-        color: #fff;
-    }
-    input{
+
+    td {
         color: #fff;
     }
 
-    i{
+    input {
+        color: #fff;
+    }
+
+    i {
         color: #fff;
     }
 }
+
 #AddOptions {
     background: #dd2f6e;
     border-radius: 12px;

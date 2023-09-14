@@ -10,7 +10,8 @@
                         <i class="bi bi-file-earmark-plus" style="font-size: 100px;"></i>
                         + Choose Product Photo
                     </label>
-                    <input class="form-control" id="photo-upload" type="file" style="display: none;" @change="uploadImage">
+                    <input autocomplete="off" class="form-control" id="photo-upload" type="file" style="display: none;"
+                        @change="uploadImage">
                 </div>
                 <div v-else style="position: relative;height: 260px;width: 100%;">
                     <i @click="previewImage = null" style="position: absolute; font-size: 25px;padding: 5px;"
@@ -22,27 +23,27 @@
                 <div class="card p-3">
                     <div class="input-field">
                         <h4>Name :</h4>
-                        <input class="form-control" type="text" v-model="itemName" required>
+                        <input autocomplete="off" class="form-control" type="text" v-model="itemName" required>
                     </div>
                     <div class="input-field">
                         <h4>Title :</h4>
-                        <input class="form-control" type="text" v-model="itemTitle" required>
+                        <input autocomplete="off" class="form-control" type="text" v-model="itemTitle" required>
                     </div>
                     <div class="input-field">
                         <h4>Tags :</h4>
-                        <input class="form-control" type="text" v-model="itemTags" required>
+                        <input autocomplete="off" class="form-control" type="text" v-model="itemTags" required>
                     </div>
                     <div class="input-field">
                         <h4>Link :</h4>
-                        <input class="form-control" type="text" v-model="itemLink" required>
+                        <input autocomplete="off" class="form-control" type="text" v-model="itemLink" required>
                     </div>
                     <div class="input-field">
                         <h4>Price :</h4>
-                        <input class="form-control" type="text" v-model="itemPrice" required>
+                        <input autocomplete="off" class="form-control" type="text" v-model="itemPrice" required>
                     </div>
                     <div class="input-field">
                         <h4>Color :</h4>
-                        <input class="form-control" type="text" v-model="itemColor" required>
+                        <input autocomplete="off" class="form-control" type="text" v-model="itemColor" required>
                     </div>
                 </div>
                 <div class="card p-3">
@@ -50,15 +51,15 @@
                     <div style="position: relative;" v-for="(addon, index) in addons" :key="index">
                         <div style="margin: 15px 0;">
                             <label for="">Arabic Name</label>
-                            <input class="form-control" type="text" v-model="addon.Aname" required>
+                            <input autocomplete="off" class="form-control" type="text" v-model="addon.Aname" required>
                         </div>
                         <div style="margin: 15px 0;">
                             <label for="">English Name</label>
-                            <input class="form-control" type="text" v-model="addon.Ename" required>
+                            <input autocomplete="off" class="form-control" type="text" v-model="addon.Ename" required>
                         </div>
                         <div style="margin: 15px 0;">
                             <label for="">Price</label>
-                            <input class="form-control" type="text" v-model="addon.price" required>
+                            <input autocomplete="off" class="form-control" type="text" v-model="addon.price" required>
                         </div>
                         <i class="bi bi-x-square-fill" style="font-size: 25px;color: #dd2f6e;"
                             v-on:click="removeAddons(index)" v-if="addons.length > 1"></i>
@@ -71,15 +72,15 @@
                     <div style="position: relative;" v-for="(option, index) in options" :key="index">
                         <div style="margin: 15px 0;">
                             <label for="">Arabic Name</label>
-                            <input class="form-control" type="text" v-model="option.Aname" required>
+                            <input autocomplete="off" class="form-control" type="text" v-model="option.Aname" required>
                         </div>
                         <div style="margin: 15px 0;">
                             <label for="">English Name</label>
-                            <input class="form-control" type="text" v-model="option.Ename" required>
+                            <input autocomplete="off" class="form-control" type="text" v-model="option.Ename" required>
                         </div>
                         <div style="margin: 15px 0;">
                             <label for="">Price</label>
-                            <input class="form-control" type="text" v-model="option.price" required>
+                            <input autocomplete="off" class="form-control" type="text" v-model="option.price" required>
                         </div>
                         <i class="bi bi-x-square-fill" style="font-size: 25px;color: #dd2f6e;"
                             v-on:click="removeOption(index)" v-if="options.length > 1"></i>
@@ -88,7 +89,7 @@
                     </div>
                 </div>
                 <div>
-                    <input type="submit" @click="save" value="Save Product" class="btn btn-success">
+                    <input autocomplete="off" type="submit" @click="save" value="Save Product" class="btn btn-success">
                 </div>
             </form>
         </div>

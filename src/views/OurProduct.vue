@@ -127,6 +127,7 @@ export default {
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 10px;
+    padding: 0;
 }
 
 .swiper-slide {

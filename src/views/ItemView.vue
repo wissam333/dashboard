@@ -61,14 +61,15 @@
                         <div class="product-detail-content">
                             <!--Product details-->
                             <div class="new-arrival-content" style="background-color: #fff; padding: 30px;">
-                                <input type="text" style="font-size: 20px;margin-bottom: 16px;" v-model="item.name">
+                                <input autocomplete="off" type="text" style="font-size: 20px;margin-bottom: 16px;"
+                                    v-model="item.name">
                                 <h6>السعر :</h6>
                                 <div style="width: 100%;height: 45px;">
-                                    <span class="price">$</span><input type="number" class="price"
+                                    <span class="price">$</span><input autocomplete="off" type="number" class="price"
                                         style="margin-bottom: 16px;" v-model="item.price">
                                 </div>
                                 <h6>البطاقات :</h6>
-                                <input type="text" style="margin: 0px 0px 16px 0;" v-model="item.tags">
+                                <input autocomplete="off" type="text" style="margin: 0px 0px 16px 0;" v-model="item.tags">
 
                                 <h6>الاضافات المتاحة: </h6>
                                 <div style="display: inline-block;" v-for="(addons, key) in item.addons">
@@ -88,11 +89,12 @@
 
                                 <div v-show="editAddons" id="Add"
                                     style="padding: 16px;display: flex;flex-direction: column;">
-                                    <input type="text" v-model="addonsAname" name="" id="Aname"
+                                    <input autocomplete="off" type="text" v-model="addonsAname" name="" id="Aname"
                                         placeholder="Type Arabic Name">
-                                    <input type="text" v-model="addonsEname" name="" id="Ename"
+                                    <input autocomplete="off" type="text" v-model="addonsEname" name="" id="Ename"
                                         placeholder="Type English Name">
-                                    <input type="number" v-model="addonsPrice" id="Price" placeholder="Type Price">
+                                    <input autocomplete="off" type="number" v-model="addonsPrice" id="Price"
+                                        placeholder="Type Price">
                                 </div>
 
                                 <br>
@@ -115,11 +117,12 @@
 
                                 <div v-show="editOptions" id="Add"
                                     style="padding: 16px;display: flex;flex-direction: column;">
-                                    <input type="text" v-model="optionsAname" name="" id="Aname"
+                                    <input autocomplete="off" type="text" v-model="optionsAname" name="" id="Aname"
                                         placeholder="Type Arabic Name">
-                                    <input type="text" v-model="optionsEname" name="" id="Ename"
+                                    <input autocomplete="off" type="text" v-model="optionsEname" name="" id="Ename"
                                         placeholder="Type English Name">
-                                    <input type="number" v-model="optionsPrice" id="Price" placeholder="Type Price">
+                                    <input autocomplete="off" type="number" v-model="optionsPrice" id="Price"
+                                        placeholder="Type Price">
                                 </div>
                             </div>
                         </div>
